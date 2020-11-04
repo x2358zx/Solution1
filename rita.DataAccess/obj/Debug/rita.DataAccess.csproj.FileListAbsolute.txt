@@ -1,0 +1,14 @@
+D:\Solution1\rita.DataAccess\bin\Debug\rita.DataAccess.dll
+D:\Solution1\rita.DataAccess\bin\Debug\rita.DataAccess.pdb
+D:\Solution1\rita.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Solution1\rita.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Solution1\rita.DataAccess\bin\Debug\rita.Information.dll
+D:\Solution1\rita.DataAccess\bin\Debug\Vista.SEC.dll
+D:\Solution1\rita.DataAccess\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Solution1\rita.DataAccess\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Solution1\rita.DataAccess\bin\Debug\rita.Information.pdb
+D:\Solution1\rita.DataAccess\obj\Debug\rita.DataAccess.csprojAssemblyReference.cache
+D:\Solution1\rita.DataAccess\obj\Debug\rita.DataAccess.csproj.CoreCompileInputs.cache
+D:\Solution1\rita.DataAccess\obj\Debug\rita.DataAccess.csproj.CopyComplete
+D:\Solution1\rita.DataAccess\obj\Debug\rita.DataAccess.dll
+D:\Solution1\rita.DataAccess\obj\Debug\rita.DataAccess.pdb

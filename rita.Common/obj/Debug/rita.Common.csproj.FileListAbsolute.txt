@@ -1,0 +1,5 @@
+D:\Solution1\rita.Common\bin\Debug\rita.Common.dll
+D:\Solution1\rita.Common\bin\Debug\rita.Common.pdb
+D:\Solution1\rita.Common\obj\Debug\rita.Common.csproj.CoreCompileInputs.cache
+D:\Solution1\rita.Common\obj\Debug\rita.Common.dll
+D:\Solution1\rita.Common\obj\Debug\rita.Common.pdb

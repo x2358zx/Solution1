@@ -1,0 +1,11 @@
+D:\Solution1\rita.Information\bin\Debug\rita.Information.dll
+D:\Solution1\rita.Information\bin\Debug\rita.Information.pdb
+D:\Solution1\rita.Information\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Solution1\rita.Information\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Solution1\rita.Information\bin\Debug\Vista.SEC.dll
+D:\Solution1\rita.Information\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Solution1\rita.Information\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Solution1\rita.Information\obj\Debug\rita.Information.csproj.CoreCompileInputs.cache
+D:\Solution1\rita.Information\obj\Debug\rita.Information.csproj.CopyComplete
+D:\Solution1\rita.Information\obj\Debug\rita.Information.dll
+D:\Solution1\rita.Information\obj\Debug\rita.Information.pdb

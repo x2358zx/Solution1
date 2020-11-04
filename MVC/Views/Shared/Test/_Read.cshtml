@@ -1,0 +1,55 @@
+﻿@model rita.Information.TestMasterInfo
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.SID)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               value="@Html.DisplayFor(i => i.SID)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.ID)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               value="@Html.DisplayFor(i => i.ID)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.NO)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               value="@Html.DisplayFor(i => i.NO)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Name)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               placeholder="王小美" value="@Html.DisplayFor(i => i.Name)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Address)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               placeholder="台北市" value="@Html.DisplayFor(i => i.Address)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Phone)</label>
+        <input type="tel" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               placeholder="09XXXXXXXX" value="@Html.DisplayFor(i => i.Phone)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Birthday)</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               placeholder="19961124" value="@Html.DisplayFor(i => i.Birthday)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.CreateTime)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               value="@Html.DisplayFor(i => i.CreateTime)">
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.UpdateTime)</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" readonly="readonly"
+               value="@Html.DisplayFor(i => i.UpdateTime)">
+    </div>
+    @using (Ajax.BeginForm("Do", "Test", new { area = "", id = Model.ID }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divajax", InsertionMode = InsertionMode.Replace }, new { id = "fmCreate" }))
+    {
+        <div class="btn-group">
+            <button type="submit" name="mode" class="btn" value="Insert">新增</button>
+            <button type="submit" name="mode" class="btn" value="Edit">編輯</button>
+            <button type="submit" name="mode" class="btn" value="Delete">刪除</button>
+        </div>
+        @Html.AntiForgeryToken()
+    }

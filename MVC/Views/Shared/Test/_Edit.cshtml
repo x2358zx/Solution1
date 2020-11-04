@@ -1,0 +1,43 @@
+﻿@model rita.Information.TestMasterInfo
+@using (Ajax.BeginForm("Save", "Test", new { area = "", isPartialView = true,  ID = Model.ID ,NO =Model.NO}, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divajax", InsertionMode = InsertionMode.Replace }, new { id = "fmEdit" }))
+{
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right">@Html.DisplayNameFor(i => i.NO)</label>
+        @Html.DisplayFor(i => i.NO, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Name)</label>
+        @Html.TextBoxFor(i => i.Name, new { type = "text", @class = "form-control", autocomplete = "off" })
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Address)</label>
+        @Html.TextBoxFor(i => i.Address, new { type = "text", @class = "form-control", autocomplete = "off" })
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Phone)</label>
+        @Html.TextBoxFor(i => i.Phone, new { type = "text", @class = "form-control", autocomplete = "off" })
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Birthday)</label>
+        @Html.TextBoxFor(i => i.Birthday, new { type = "date", @class = "form-control", autocomplete = "off" })
+    </div>
+    <div class="text-danger small">
+        @Html.ValidationMessageFor(i => i.NO)
+        @Html.ValidationMessageFor(i => i.Name)
+        @Html.ValidationMessageFor(i => i.Address)
+        @Html.ValidationMessageFor(i => i.Phone)
+        @Html.ValidationMessageFor(i => i.Birthday)
+        @*@Html.ValidationSummary()*@
+    </div>
+    <div class="btn-group" role="group">
+        <button type="submit" class="btn btn-secondary">儲存</button>
+        <button type="submit" name="fun" value="Close" class="btn btn-secondary">關閉</button>
+        <button type="submit" name="fun" value="Cancel" class="btn btn-secondary">取消</button>
+    </div>
+    @Html.AntiForgeryToken()
+}
+@*<script>
+    $("fmEdit").removeData("validator");
+    $("fmEdit").removeData("unobtrusiveValidation");
+    $.validator.unobtrusive.parse("fmEdit");
+</script>*@

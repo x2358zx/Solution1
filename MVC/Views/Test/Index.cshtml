@@ -1,0 +1,24 @@
+﻿@Html.Partial("~/Views/Shared/Test/_ToolBar.cshtml")
+@*@Html.Action("List", "Test", new { area = "" })*@@*改非同步就變成不能用Action改用Partial*@
+@Html.Partial("~/Views/Shared/Test/_List.cshtml")
+<div id="divajax">
+</div>
+@using (Ajax.BeginForm("List", "Test", new { area = "" },
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ajaxList", InsertionMode = InsertionMode.Replace },
+    new { id = "dumyList" }))
+{
+}
+@using (Ajax.BeginForm("Read", "Test", new { area = "" },
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divajax", InsertionMode = InsertionMode.Replace },
+    new { id = "dumyRead" }))
+{
+    <input type="hidden" id="dumyID" name="id" />
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dumyList').submit();
+        });
+    </script>
+}
+

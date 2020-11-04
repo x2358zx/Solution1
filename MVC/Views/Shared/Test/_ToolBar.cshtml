@@ -1,0 +1,16 @@
+﻿<div id="ajaxToolBar">
+    @using (Ajax.BeginForm("Do", "Test", new { area = "" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divajax", InsertionMode = InsertionMode.Replace }, new { id = "fmCreate" }))
+    {
+        <div class="btn-group">
+            @*<button type="submit" name="mode" class="btn" value="Create" hidden="hidden">建立</button>*@
+            @*<button type="submit" name="mode" class="btn" value="Save" hidden="hidden">儲存</button>*@
+            <button type="submit" name="mode" class="btn" value="Insert">新增</button>
+            @*<button type="submit" name="mode" class="btn" value="Edit" disabled="disabled">編輯</button>*@
+            @*<button type="submit" name="mode" class="btn" value="Delete" disabled="disabled">刪除</button>*@
+            @*<button type="submit" name="mode" class="btn" value="Cancel" disabled="disabled">取消</button>*@
+        </div>
+        @Html.AntiForgeryToken()
+    }
+
+
+</div>

@@ -1,0 +1,26 @@
+﻿@model rita.Information.PaginationInfo
+@{
+    int lastpage = Model.Total / Model.Size;
+    if (Model.Total % Model.Size != 0) { lastpage += 1; }
+    int prevpage = (Model.Index - 1 < 1) ? Model.Index : (Model.Index - 1);
+    int nextpage = (Model.Index + 1) > lastpage ? lastpage : (Model.Index + 1);
+}
+<button type="submit" onclick="$('#paginationtotal').val('0');">第一頁</button>
+<button type="submit" onclick="$('#pagination').val('@prevpage');">上一頁</button>
+@*@for (int i = startpage;i<=endpage;i++)
+    {
+        string js = $"$('#pager').val('page{@i}');";
+        <button type="submit" onclick="@js">@i</button>
+    }*@
+<button type="submit" onclick="$('#pagination').val('@nextpage');">下一頁</button>
+<button type="submit" onclick="$('#pagination').val('@lastpage');">最後頁</button>
+<span>@($"{Model.Index}/{lastpage}")</span>
+<span>(共有 @Model.Total 筆資料)</span>
+<button type="submit" onclick="$('#paginationTotal').val('0');$('#pagination').val('1');">更新資料</button>
+@*<input type="text" id="pager" name="pager" value="" />*@
+<br>
+<label>頁數</label>
+<input type="text" id="pagination" name="pagination.index" value="@Model.Index" />
+<input type="text" name="pagination.size" value="@Model.Size" />
+<input type="text" id="paginationTotal" name="pagination.total" value="@Model.Total" />
+<input type="button" id="pagination" name="pagination.index" value="@Model.Index" />

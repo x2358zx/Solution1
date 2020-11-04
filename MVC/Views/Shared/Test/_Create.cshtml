@@ -1,0 +1,49 @@
+﻿@model rita.Information.TestMasterInfo
+@using (Ajax.BeginForm("Insert", "Test", new { area = "", isPartialView = true }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divajax", InsertionMode = InsertionMode.Replace }, new { id = "fmCreate" }))
+{
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.NO)</label>
+        @Html.TextBoxFor(i => i.NO, new { type = "number", @class = "form-control", autocomplete = "off", placeholder = "1" })
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Name)</label>
+        @Html.TextBoxFor(i => i.Name, new { type = "text", @class = "form-control", autocomplete = "off", placeholder = "王小美" })
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Address)</label>
+        @Html.TextBoxFor(i => i.Address, new { type = "text", @class = "form-control", autocomplete = "off", placeholder = "台北市" })
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Phone)</label>
+        @Html.TextBoxFor(i => i.Phone, new { type = "text", @class = "form-control", autocomplete = "off", placeholder = "09XXXXXXXX" })
+
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-label text-right"> @Html.DisplayNameFor(i => i.Birthday)</label>
+        @Html.TextBoxFor(i => i.Birthday, new { type = "date", @class = "form-control", autocomplete = "off", placeholder = "19961124" })
+
+    </div>
+    <div class="text-danger small">
+        @Html.ValidationMessageFor(i => i.NO)
+        @Html.ValidationMessageFor(i => i.Name)
+        @Html.ValidationMessageFor(i => i.Address)
+        @Html.ValidationMessageFor(i => i.Phone)
+        @Html.ValidationMessageFor(i => i.Birthday)
+
+        @*@Html.ValidationSummary()*@
+    </div>
+    <div class="btn-group" role="group">
+        <button type="submit" class="btn btn-secondary">新增</button>
+        <button type="submit" name="fun" class="btn btn-secondary" value="Cancel">取消</button>
+    </div>
+    @Html.AntiForgeryToken()
+    
+}
+@*<script>
+    $("fmCreate").removeData("validator");
+    $("fmCreate").removeData("unobtrusiveValidation");
+    $.validator.unobtrusive.parse("fmCreate");
+</script>*@
