@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="rita_web.Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="~/UserControl/Pager.ascx" TagPrefix="uc1" TagName="Pager" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <br />
@@ -8,11 +10,11 @@
         <ContentTemplate>
             <asp:Label ID="lblName" runat="server" Text="姓名："></asp:Label>
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-            <asp:AutoCompleteExtender ID="userList_AutoCompleteExtender" runat="server" CompletionInterval="500"
+<%--            <asp:AutoCompleteExtender ID="userList_AutoCompleteExtender" runat="server" CompletionInterval="500"
                             TargetControlID="userList" ServiceMethod="strUser" ServicePath="~/webservice/ajax.asmx"
                             DelimiterCharacters="" Enabled="True" CompletionSetCount="20" CompletionListCssClass="autocomplete_completionListElement"
                             CompletionListItemCssClass="autocomplete_listItem" CompletionListHighlightedItemCssClass="autocomplete_highlightedListItem"
-                            MinimumPrefixLength="1"></asp:AutoCompleteExtender>
+                            MinimumPrefixLength="1"></asp:AutoCompleteExtender>--%>
             <asp:Button ID="btnQuery" runat="server" Text="查詢" OnClick="btnQuery_Click" />
             <asp:Button ID="btnCreate" runat="server" Text="新增" OnClick="btnCreate_Click" />
             <asp:GridView ID="gvMaster" runat="server" AutoGenerateColumns="False" Width="100%" AutoGenerateEditButton="True" AutoGenerateSelectButton="True" DataKeyNames="SID,ID" OnSelectedIndexChanged="gvMaster_SelectedIndexChanged" OnPageIndexChanging="gvMaster_PageIndexChanging" PageSize="5" OnRowDataBound="gvMaster_RowDataBound">
@@ -35,10 +37,11 @@
                     <asp:BoundField DataField="age" HeaderText="年齡" DataFormatString="{0:#,#0.#}" HtmlEncode="False" />
                 </Columns>
             </asp:GridView>
-            <asp:Button ID="btnFirst" runat="server" Text="第一頁" CommandName="PagerFirst" OnClick="gvMaster_PageIndexChanged" />
+<%--            <asp:Button ID="btnFirst" runat="server" Text="第一頁" CommandName="PagerFirst" OnClick="gvMaster_PageIndexChanged" />
             &nbsp;<asp:Button ID="btnPrev" runat="server" Text="上一頁" CommandName="PagerPrev" OnClick="gvMaster_PageIndexChanged" />
             &nbsp;<asp:Button ID="btnNext" runat="server" Text="下一頁" CommandName="PagerNext" OnClick="gvMaster_PageIndexChanged" />
-            &nbsp;<asp:Button ID="btnLast" runat="server" Text="最後頁" CommandName="PagerLast" OnClick="gvMaster_PageIndexChanged" />
+            &nbsp;<asp:Button ID="btnLast" runat="server" Text="最後頁" CommandName="PagerLast" OnClick="gvMaster_PageIndexChanged" />--%>
+            <uc1:Pager runat="server" ID="Pager" OnPageIndexChanged="Pager_PageIndexChanged"/>
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />

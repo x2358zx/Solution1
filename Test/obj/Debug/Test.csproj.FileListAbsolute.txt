@@ -7,8 +7,8 @@ D:\Solution1\Test\bin\Debug\EntityFramework.xml
 D:\Solution1\Test\bin\Debug\EntityFramework.SqlServer.xml
 D:\Solution1\Test\bin\Debug\zh-Hant\EntityFramework.resources.dll
 D:\Solution1\Test\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
-D:\Solution1\Test\obj\Debug\Test.csprojAssemblyReference.cache
 D:\Solution1\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Solution1\Test\obj\Debug\Test.csproj.CopyComplete
 D:\Solution1\Test\obj\Debug\Test.dll
 D:\Solution1\Test\obj\Debug\Test.pdb
+D:\Solution1\Test\obj\Debug\Test.csprojAssemblyReference.cache

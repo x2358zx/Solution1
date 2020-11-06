@@ -67,6 +67,11 @@ namespace rita_web
             pagination = _pagination;
             gvMaster.DataSource = dt;
             gvMaster.DataBind();
+
+            Pager.pagination = pagination;
+            Pager.Bind=true;
+
+            
         }
 
         protected void gvMaster_SelectedIndexChanged(object sender, EventArgs e)
@@ -417,6 +422,11 @@ namespace rita_web
                 ddl.DataBind();
             }
 
+        }
+        protected void Pager_PageIndexChanged(object sender, EventArgs e, PaginationInfo pagination)
+        {
+            this.pagination = pagination;
+            bindMaster(null);
         }
     }
 }

@@ -9,3 +9,4 @@ D:\Solution1\rita.Information\obj\Debug\rita.Information.csproj.CoreCompileInput
 D:\Solution1\rita.Information\obj\Debug\rita.Information.csproj.CopyComplete
 D:\Solution1\rita.Information\obj\Debug\rita.Information.dll
 D:\Solution1\rita.Information\obj\Debug\rita.Information.pdb
+D:\Solution1\rita.Information\obj\Debug\rita.Information.csprojAssemblyReference.cache
