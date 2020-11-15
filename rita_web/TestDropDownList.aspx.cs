@@ -13,12 +13,17 @@ namespace rita_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //BindDropDownList();
+            //非常重要!避免重新繫結時，讓繫結全部初始
+            if (!IsPostBack)
+            {
+                BindddlKIND();
+                BindddlITEM();
+            }
         }
 
-        private void BindDropDownList()
+        private void BindddlKIND()
         {
-            string KIND = ddlKIND.Text;
+            //string KIND = ddlKIND.Text;
 
             #region 存取資料庫執行SQL
             TestDropDownListDB db = new TestDropDownListDB();
@@ -37,6 +42,35 @@ namespace rita_web
             ddlKIND.DataValueField = "KIND";
             ddlKIND.DataBind();
             #endregion
+        }
+
+        private void BindddlITEM()
+        {
+            string KIND = ddlKIND.Text;
+
+            #region 存取資料庫執行SQL
+            TestDropDownListDB db = new TestDropDownListDB();
+            DataTable dt = db.ITEM_Load(KIND: KIND);
+            #endregion
+
+            #region 讓欄位說明呈現
+            DataRow ndr = dt.NewRow();
+            ndr["ITEM"] = "品項";
+            dt.Rows.InsertAt(ndr, 0);
+            #endregion
+
+            #region 繫結欄位
+            ddlITEM.DataSource = dt;
+            ddlITEM.DataTextField = "ITEM";
+            ddlITEM.DataValueField = "ITEM";
+            ddlITEM.DataBind();
+            #endregion
+        }
+
+        protected void ddlKIND_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //讓品項重新繫結資料庫，對應種類呈現出來
+            BindddlITEM();
         }
     }
 }

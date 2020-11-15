@@ -67,7 +67,7 @@ namespace rita.DataAccess
 
             #region Add In Parameter
 
-            //db.AddInParameter(dbCommand, "@SID", DbType.Int32, iSID);
+            db.AddInParameter(dbCommand2, "@KIND", DbType.String, KIND);
 
             #endregion
 
